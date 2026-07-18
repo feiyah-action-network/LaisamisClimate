@@ -1002,15 +1002,211 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
+    /* ── MOTION SYSTEM ──────────────────────────────── */
+    :root { --ease-out: cubic-bezier(0.16, 1, 0.3, 1); }
+
+    section { scroll-margin-top: 70px; }
+
+    /* scroll progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber), var(--amber-lt));
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    /* nav entrance + scrolled state */
+    nav {
+      animation: navDrop 0.7s var(--ease-out) both;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+    @keyframes navDrop {
+      from { transform: translateY(-100%); }
+      to   { transform: translateY(0); }
+    }
+    nav.scrolled {
+      background: rgba(27,58,45,0.99);
+      box-shadow: 0 4px 24px rgba(15,26,16,0.35);
+    }
+
+    /* nav link underline + scrollspy active state */
+    .nav-links a { position: relative; }
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -6px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .nav-links a:not(.nav-cta):hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+    .nav-links a.active { color: var(--parch); }
+
+    /* mobile menu drop-down */
+    @media (max-width: 620px) {
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; left: 0; right: 0;
+        gap: 1rem;
+        padding: 1.2rem 1.5rem 1.5rem;
+        background: rgba(27,58,45,0.98);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        animation: menuDrop 0.35s var(--ease-out) both;
+      }
+    }
+    @keyframes menuDrop {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* hero entrance choreography */
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-eyebrow, .hero-h1, .hero-sub, .hero-actions {
+      opacity: 0;
+      animation: riseIn 0.8s var(--ease-out) forwards;
+    }
+    .hero-eyebrow { animation-delay: 0.15s; }
+    .hero-h1     { animation-delay: 0.28s; }
+    .hero-sub    { animation-delay: 0.44s; }
+    .hero-actions{ animation-delay: 0.58s; }
+    .hero-stat {
+      opacity: 0;
+      animation: riseIn 0.7s var(--ease-out) forwards;
+    }
+    .hero-stat:nth-child(1) { animation-delay: 0.72s; }
+    .hero-stat:nth-child(2) { animation-delay: 0.81s; }
+    .hero-stat:nth-child(3) { animation-delay: 0.90s; }
+    .hero-stat:nth-child(4) { animation-delay: 0.99s; }
+    .hero-stat:nth-child(5) { animation-delay: 1.08s; }
+
+    /* slow ambient drift on the hero's amber bloom */
+    #home::after {
+      animation: bloomPulse 10s ease-in-out infinite alternate;
+    }
+    @keyframes bloomPulse {
+      from { opacity: 0.7; transform: scale(1); }
+      to   { opacity: 1;   transform: scale(1.15) translate(-2%, 2%); }
+    }
+
     /* ── SCROLL REVEAL ──────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(28px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* staggered grids: the container stays put, children cascade in */
+    .reveal.stagger { opacity: 1; transform: none; }
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+      transition-delay: calc(var(--i, 0) * 90ms);
+    }
+    .stagger.visible > * { opacity: 1; transform: none; }
+
+    /* ── MICRO-INTERACTIONS ─────────────────────────── */
+    .btn {
+      transition: background 0.25s ease, border-color 0.25s ease,
+                  transform 0.25s var(--ease-out), box-shadow 0.25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,26,16,0.18); }
+    .btn:active { transform: translateY(0); box-shadow: none; }
+    .nav-cta { transition: background 0.2s, transform 0.25s var(--ease-out) !important; }
+    .nav-cta:hover { transform: translateY(-1px); }
+
+    .pillar-card {
+      transition: background 0.25s ease, transform 0.35s var(--ease-out),
+                  box-shadow 0.35s ease;
+    }
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(27,58,45,0.1); }
+    .pillar-icon { transition: transform 0.35s var(--ease-out), background 0.3s ease; }
+    .pillar-card:hover .pillar-icon { transform: scale(1.1) rotate(-4deg); background: var(--earth); }
+
+    .carbon-card {
+      transition: border-color 0.25s ease, background 0.25s ease,
+                  transform 0.35s var(--ease-out), box-shadow 0.35s ease;
+    }
+    .carbon-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+
+    .solar-model {
+      transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.35s ease;
+    }
+    .solar-model:hover { transform: translateY(-4px); border-color: rgba(193,127,36,0.5); box-shadow: 0 14px 30px rgba(27,58,45,0.08); }
+    .solar-phase { transition: background 0.25s ease; }
+    .solar-phase:hover { background: var(--parch-lt); }
+
+    .metric { transition: background 0.3s ease; }
+    .metric:hover { background: #35674a; }
+
+    .zone { transition: background 0.25s ease, transform 0.35s var(--ease-out); }
+    .zone:hover { background: var(--parch); transform: translateY(-3px); }
+    .zone-bar {
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform 0.9s var(--ease-out);
+      transition-delay: calc(var(--i, 0) * 120ms + 250ms);
+    }
+    .land-zones.visible .zone-bar { transform: scaleX(1); }
+
+    .gov-step-n { transition: transform 0.3s var(--ease-out), background 0.3s ease, color 0.3s ease; }
+    .gov-step:hover .gov-step-n { transform: scale(1.12); background: var(--amber); color: var(--ink); }
+
+    .insight-card {
+      transition: background 0.25s ease, transform 0.35s var(--ease-out), box-shadow 0.35s ease;
+    }
+    .insight-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(27,58,45,0.08); }
+    .insight-arrow { transition: transform 0.3s var(--ease-out); }
+    .insight-card:hover .insight-arrow { transform: translateX(6px); }
+
+    .tag { transition: background 0.25s ease, color 0.25s ease; }
+    .tag:hover { background: var(--ground); color: var(--parch); }
+
+    .about-accent {
+      opacity: 0;
+      transform: translate(12px, -12px);
+      transition: opacity 0.7s var(--ease-out) 0.45s, transform 0.7s var(--ease-out) 0.45s;
+    }
+    .about-photo-wrap.visible .about-accent { opacity: 1; transform: none; }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--earth);
+      box-shadow: 0 0 0 3px rgba(45,90,61,0.12);
+    }
+    input, select, textarea { transition: border-color 0.2s, box-shadow 0.2s; }
+
+    /* ── REDUCED MOTION ─────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .reveal, .stagger > *, .hero-eyebrow, .hero-h1, .hero-sub,
+      .hero-actions, .hero-stat, .about-accent {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .zone-bar { transform: scaleX(1) !important; }
     }
   </style>
 </head>
@@ -1032,7 +1228,7 @@
       <li><a href="briefing.html">Briefing</a></li>
       <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">☰</button>
+    <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   </div>
 </nav>
 
@@ -1522,13 +1718,66 @@
 </footer>
 
 <script>
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* staggered grids: index each child so CSS can cascade them in */
+  document.querySelectorAll(
+    '.pillars-grid, .carbon-cards, .solar-models, .solar-phases, .metrics-grid, .land-zones, .gov-steps, .insights-grid'
+  ).forEach(grid => {
+    grid.classList.add('stagger');
+    Array.from(grid.children).forEach((child, i) => child.style.setProperty('--i', i));
+  });
+
   /* scroll reveal */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* scroll progress bar */
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  let progressTicking = false;
+  function updateProgress() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    progressTicking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!progressTicking) { progressTicking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  updateProgress();
+
+  /* nav: shadow when scrolled */
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  /* nav: scrollspy highlights the section in view */
+  const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]:not(.nav-cta)'));
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  navAnchors.forEach(a => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) spyObserver.observe(target);
+  });
+
+  /* nav: close mobile menu after choosing a link */
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+  });
 
   /* form: show success message after FormSubmit redirects back with ?sent=1 */
   if (new URLSearchParams(window.location.search).get('sent') === '1') {
@@ -1537,31 +1786,39 @@
     if (contactForm) contactForm.style.display = 'none';
   }
 
-  /* counter animation */
-  function animateCounters() {
-    document.querySelectorAll('.metric-num').forEach(el => {
-      const text = el.textContent;
-      const num = parseFloat(text);
-      if (isNaN(num)) return;
-      const sup = el.querySelector('sup');
-      const suffix = sup ? sup.outerHTML : '';
-      const hasDot = text.includes('.');
-      let start = 0;
-      const duration = 1400;
-      const step = (timestamp) => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = num * eased;
-        el.innerHTML = (hasDot ? current.toFixed(2) : Math.floor(current)) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    });
+  /* counter animation, shared by hero stats and impact metrics */
+  function countUp(el, duration) {
+    const text = el.textContent;
+    const num = parseFloat(text);
+    if (isNaN(num)) return;
+    const suffixEl = el.querySelector('sup, span');
+    const suffix = suffixEl ? suffixEl.outerHTML : '';
+    const hasDot = text.includes('.');
+    if (prefersReduced) return;
+    let start = 0;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = num * eased;
+      el.innerHTML = (hasDot ? current.toFixed(2) : Math.floor(current)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   }
+
+  /* hero stats count up as they finish their entrance */
+  setTimeout(() => {
+    document.querySelectorAll('.hero-stat-num').forEach(el => countUp(el, 1200));
+  }, prefersReduced ? 0 : 700);
+
+  /* impact metrics count up on scroll into view */
   const metricsSection = document.getElementById('impact');
   const metricsObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) { animateCounters(); metricsObserver.disconnect(); }
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.metric-num').forEach(el => countUp(el, 1400));
+      metricsObserver.disconnect();
+    }
   }, { threshold: 0.3 });
   metricsObserver.observe(metricsSection);
 </script>

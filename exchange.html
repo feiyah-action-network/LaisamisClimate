@@ -69,6 +69,24 @@ tr:hover td{background:rgba(255,255,255,0.02);}
   .grid-2{grid-template-columns:1fr!important;}
   .grid-4{grid-template-columns:1fr 1fr!important;}
 }
+/* ── Motion ── */
+nav{animation:navDrop .7s cubic-bezier(0.16,1,0.3,1) both;}
+@keyframes navDrop{from{transform:translateY(-100%);}to{transform:translateY(0);}}
+/* scroll reveal — class applied by script after React renders, so no-JS stays visible */
+.rv-sec{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1);}
+.rv-sec.visible{opacity:1;transform:none;}
+.badge{transition:transform .25s cubic-bezier(0.16,1,0.3,1);}
+.card:hover .badge{transform:translateY(-1px);}
+.filter-btn{transition:all .25s ease;}
+.filter-btn:hover{border-color:#C17F24;color:#C17F24;transform:translateY(-1px);}
+.filter-btn.active:hover{color:#1A1A1A;}
+.kpi-card{transition:border-color .3s ease,transform .3s cubic-bezier(0.16,1,0.3,1);}
+.kpi-card:hover{border-color:rgba(193,127,36,0.5);transform:translateY(-3px);}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  html{scroll-behavior:auto;}
+  .rv-sec{opacity:1!important;transform:none!important;}
+}
 </style>
 </head>
 <body>
@@ -631,6 +649,23 @@ function App(){
   );
 }
 ReactDOM.render(<App/>,document.getElementById('root'));
+</script>
+<script>
+/* scroll reveal for rendered sections — waits for React to mount */
+(function(){
+  let tries = 0;
+  function init(){
+    const sections = document.querySelectorAll('#root section');
+    if (!sections.length) { if (++tries < 100) setTimeout(init, 120); return; }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    sections.forEach(s => { s.classList.add('rv-sec'); obs.observe(s); });
+  }
+  init();
+})();
 </script>
 </body>
 </html>

@@ -70,7 +70,32 @@
       nav{padding:0 1.2rem;}
       .article-wrap{padding:5rem 1.5rem 3rem;}
     }
+    /* ── Motion ── */
+    nav{animation:navDrop 0.7s cubic-bezier(0.16,1,0.3,1) both;}
+    @keyframes navDrop{from{transform:translateY(-100%);}to{transform:translateY(0);}}
+    @keyframes riseIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+    .art-tag,.article-wrap h1,.art-date,.lede{opacity:0;animation:riseIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+    .art-tag{animation-delay:0.12s;}
+    .article-wrap h1{animation-delay:0.25s;}
+    .art-date{animation-delay:0.38s;}
+    .lede{animation-delay:0.5s;}
+    .back-link{transition:color 0.2s ease,transform 0.25s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
+    .back-link:hover{transform:translateX(-3px);}
+    .cta-band a{transition:transform 0.25s cubic-bezier(0.16,1,0.3,1),box-shadow 0.25s ease;}
+    .cta-band a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+    footer a{transition:color 0.2s ease;}
+    footer a:hover{color:var(--sand);}
+    /* scroll reveal (only when JS has tagged <html class="anim">) */
+    html.anim .rv{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+    html.anim .rv.visible{opacity:1;transform:none;}
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;animation-delay:0ms !important;transition-delay:0ms !important;}
+      html{scroll-behavior:auto;}
+      .art-tag,.article-wrap h1,.art-date,.lede{opacity:1;}
+      html.anim .rv{opacity:1 !important;transform:none !important;}
+    }
   </style>
+  <script>document.documentElement.classList.add('anim');</script>
 </head>
 <body>
 <nav>
@@ -139,5 +164,15 @@
   </div>
 </div>
 <footer><a href="index.html#insights">← Back to Insights</a></footer>
+<script>
+  /* fade article blocks in as they enter the viewport */
+  document.querySelectorAll('.article-wrap h2, .article-wrap > p:not(.lede), .callout, .key-points, .cta-band').forEach(el => el.classList.add('rv'));
+  const rvObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); rvObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rv').forEach(el => rvObserver.observe(el));
+</script>
 </body>
 </html>

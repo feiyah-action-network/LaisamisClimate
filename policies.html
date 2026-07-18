@@ -296,6 +296,51 @@
       .content-wrap { padding: 3rem 1.5rem 4rem; }
       footer { padding: 1.5rem; }
     }
+
+    /* ─── Motion ──────────────────────────────────────────────────── */
+    nav {
+      animation: navDrop 0.7s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes navDrop {
+      from { transform: translateY(-100%); }
+      to   { transform: translateY(0); }
+    }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .page-hero .tag,
+    .page-hero h1,
+    .page-hero p {
+      opacity: 0;
+      animation: riseIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .page-hero .tag { animation-delay: 0.15s; }
+    .page-hero h1  { animation-delay: 0.28s; }
+    .page-hero p   { animation-delay: 0.42s; }
+    .tab-bar { animation: riseIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+    .tab-bar a { transition: color 0.25s ease, border-bottom-color 0.25s ease; }
+    /* tab content cross-fades each time a tab is chosen */
+    .policy-section.active {
+      animation: policyIn 0.5s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes policyIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .nav-back { transition: color 0.2s ease; }
+    .footer-links a { transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--sand); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .page-hero .tag, .page-hero h1, .page-hero p { opacity: 1; }
+    }
   </style>
 </head>
 <body>
