@@ -97,7 +97,7 @@
     .nav-logo span { color: var(--amber); }
     .nav-links {
       display: flex;
-      gap: 1.8rem;
+      gap: 1.4rem;
       list-style: none;
     }
     .nav-links a {
@@ -401,6 +401,10 @@
     .carbon-card-badge.suspended {
       background: rgba(200,80,60,0.15);
       color: #e08060;
+    }
+    .carbon-card-badge.reinstated {
+      background: rgba(42,122,111,0.25);
+      color: #7fd4c8;
     }
     .carbon-card h4 {
       font-family: var(--ff-display);
@@ -807,6 +811,47 @@
       align-self: flex-start;
     }
 
+    /* ── NEWSLETTER ─────────────────────────────────── */
+    .newsletter-band {
+      margin-top: 3rem;
+      background: var(--ground);
+      border-radius: 8px;
+      padding: 2.2rem 2.4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .newsletter-band h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--parch);
+      margin-bottom: 0.4rem;
+    }
+    .newsletter-band p {
+      font-size: 0.85rem;
+      color: rgba(245,239,224,0.65);
+      line-height: 1.6;
+    }
+    .newsletter-form { display: flex; gap: 0.7rem; }
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(245,239,224,0.2);
+      color: var(--parch);
+    }
+    .newsletter-form input[type="email"]::placeholder { color: rgba(245,239,224,0.4); }
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(193,127,36,0.15);
+    }
+    .newsletter-success {
+      display: none;
+      font-size: 0.88rem;
+      color: var(--amber-lt);
+    }
+
     /* ── ABOUT ──────────────────────────────────────── */
     #about {
       background: var(--ground);
@@ -987,6 +1032,7 @@
       .gov-grid { grid-template-columns: 1fr; }
       .gov-right { position: static; }
       .insights-grid { grid-template-columns: 1fr; }
+      .newsletter-band { grid-template-columns: 1fr; padding: 1.8rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { max-width: 320px; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -999,6 +1045,7 @@
       .metrics-grid { grid-template-columns: 1fr; }
       .land-zones { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
@@ -1225,6 +1272,7 @@
       <li><a href="#governance">Governance</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="briefing.html">Briefing</a></li>
       <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
     </ul>
@@ -1322,17 +1370,17 @@
       <div class="reveal">
         <span class="label carbon-label">Carbon Brokerage</span>
         <h2 class="carbon-title">Community-first carbon.<br><em>Integrity built in.</em></h2>
-        <p class="carbon-body">Kenya's carbon market is growing fast, and facing a credibility crisis. High-profile projects have been suspended for failing to obtain community consent. LCLI's community-governed architecture makes that failure structurally impossible.</p>
+        <p class="carbon-body">Kenya's carbon market is growing fast, and it has already learned its defining lesson: the region's flagship rangeland project was suspended over community consent, and regained market access in 2026 only after consent was rebuilt under the Community Land Act. Kenya's 2024 carbon regulations now make consent and benefit-sharing law — land-based projects must return at least 40% of earnings to communities. LCLI's community-governed architecture builds that compliance in from day one.</p>
         <p class="carbon-body">We connect community land projects in northern Kenya to verified international buyers, earning on matched deals, not upfront fees. No community signs anything until FPIC is fully documented. That is our market position.</p>
         <a href="#contact" class="btn btn-primary">Discuss a Carbon Partnership</a>
         <p class="carbon-disclaimer">Projects referenced for market intelligence purposes. Registry data sourced from Verra public records. LCLI earns commission on matched deals only. No upfront cost to community land projects.</p>
       </div>
       <div class="carbon-cards reveal">
         <div class="carbon-card">
-          <span class="carbon-card-badge suspended">⚠ Suspended</span>
+          <span class="carbon-card-badge reinstated">↻ Reinstated Jun 2026</span>
           <h4>Northern Kenya Rangelands Carbon Project</h4>
-          <p>1.9M ha · NRT · Verra #1468 · Suspended Jan 2025 following court ruling on community consent.</p>
-          <p class="carbon-price">$8–12 / tonne · Not listed by LCLI</p>
+          <p>1.9M ha · NRT · Verra #1468 · Suspended Jan 2025 over community consent; reinstated June 2026 only after community ratification under the Community Land Act.</p>
+          <p class="carbon-price">$8–12 / tonne · Consent restored market access</p>
         </div>
         <div class="carbon-card">
           <span class="carbon-card-badge">✓ Active</span>
@@ -1599,6 +1647,23 @@
         <span class="insight-arrow">Read article →</span>
       </a>
     </div>
+    <div class="newsletter-band reveal">
+      <div>
+        <h3>Field intelligence, monthly.</h3>
+        <p>Land, carbon, and climate technology intelligence from northern Kenya — for partners, funders, and researchers. No spam, unsubscribe anytime.</p>
+      </div>
+      <div>
+        <p id="newsletter-success" class="newsletter-success">Subscribed. Field intelligence will arrive in your inbox.</p>
+        <form class="newsletter-form" action="https://formsubmit.co/hamednalle@laisamisclimate.co.ke" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New field-intelligence subscriber via laisamisclimate.co.ke" />
+          <input type="hidden" name="_next" value="https://laisamisclimate.co.ke/?subscribed=1#insights" />
+          <input type="hidden" name="form" value="newsletter" />
+          <input type="email" name="email" placeholder="Work email" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1707,6 +1772,7 @@
     <div class="footer-inner">
       <div class="footer-logo">LCLI <span>·</span> Laisamis Climate &amp; Land Initiative</div>
       <ul class="footer-links">
+        <li><a href="services.html">Services</a></li>
         <li><a href="#insights">Insights</a></li>
         <li><a href="briefing.html">Briefing</a></li>
         <li><a href="policies.html">Policies</a></li>
@@ -1786,6 +1852,13 @@
     if (contactForm) contactForm.style.display = 'none';
   }
 
+  /* newsletter: show success after FormSubmit redirects back with ?subscribed=1 */
+  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+    document.getElementById('newsletter-success').style.display = 'block';
+    var newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) newsletterForm.style.display = 'none';
+  }
+
   /* counter animation, shared by hero stats and impact metrics */
   function countUp(el, duration) {
     const text = el.textContent;
@@ -1822,5 +1895,8 @@
   }, { threshold: 0.3 });
   metricsObserver.observe(metricsSection);
 </script>
+<!-- Cookieless, privacy-friendly analytics. Activate by claiming the code
+     "laisamisclimate" at goatcounter.com — until then this no-ops silently. -->
+<script data-goatcounter="https://laisamisclimate.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
