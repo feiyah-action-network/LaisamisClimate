@@ -70,6 +70,17 @@
       nav{padding:0 1.2rem;}
       .article-wrap{padding:5rem 1.5rem 3rem;}
     }
+    /* ── Subscribe band ── */
+    .subscribe-band{background:var(--earth);margin:3rem 0 0;padding:2rem;}
+    .subscribe-band h3{font-family:var(--serif);font-size:1.2rem;color:var(--sand);margin-bottom:0.3rem;}
+    .subscribe-band>p{font-size:0.85rem;color:var(--mist);margin-bottom:1.2rem;}
+    .subscribe-form{display:flex;gap:0.7rem;}
+    .subscribe-form input[type="email"]{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(232,213,163,0.25);color:var(--white);padding:0.65rem 0.9rem;font-family:var(--sans);font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+    .subscribe-form input[type="email"]:focus{border-color:var(--ochre);}
+    .subscribe-form button{background:var(--ochre);color:var(--earth);border:none;padding:0.65rem 1.4rem;font-family:var(--sans);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.25s cubic-bezier(0.16,1,0.3,1);}
+    .subscribe-form button:hover{background:var(--sand);transform:translateY(-1px);}
+    .subscribe-success{display:none;font-size:0.88rem;color:var(--sand);}
+    @media(max-width:600px){.subscribe-form{flex-direction:column;}}
     /* ── Motion ── */
     nav{animation:navDrop 0.7s cubic-bezier(0.16,1,0.3,1) both;}
     @keyframes navDrop{from{transform:translateY(-100%);}to{transform:translateY(0);}}
@@ -162,6 +173,19 @@
     <p>"Four zones. One partnership. The data that takes years to collect elsewhere, available from one community-governed testbed."</p>
     <a href="briefing.html">Request the Full Briefing Document</a>
   </div>
+  <div class="subscribe-band">
+    <h3>Field intelligence, monthly.</h3>
+    <p>Land, carbon, and climate technology intelligence from northern Kenya — for partners, funders, and researchers.</p>
+    <p class="subscribe-success" id="subscribe-success">Subscribed. Field intelligence will arrive in your inbox.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/hamednalle@laisamisclimate.co.ke" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="New field-intelligence subscriber via laisamisclimate.co.ke" />
+      <input type="hidden" name="_next" value="https://laisamisclimate.co.ke/insight-zones.html?subscribed=1" />
+      <input type="hidden" name="form" value="newsletter" />
+      <input type="email" name="email" placeholder="Work email" required aria-label="Email address" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
 </div>
 <footer><a href="index.html#insights">← Back to Insights</a></footer>
 <script>
@@ -173,6 +197,16 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.rv').forEach(el => rvObserver.observe(el));
+
+  /* newsletter: show success after FormSubmit redirects back with ?subscribed=1 */
+  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+    document.getElementById('subscribe-success').style.display = 'block';
+    var subForm = document.querySelector('.subscribe-form');
+    if (subForm) subForm.style.display = 'none';
+  }
 </script>
+<!-- Cookieless, privacy-friendly analytics. Activate by claiming the code
+     "laisamisclimate" at goatcounter.com — until then this no-ops silently. -->
+<script data-goatcounter="https://laisamisclimate.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
