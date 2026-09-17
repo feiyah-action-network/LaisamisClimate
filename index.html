@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laisamis Climate & Land Initiative — a community movement for land justice and climate resilience in northern Kenya: registering 1.85 million hectares of ancestral community land, training land paralegals, and holding the carbon market accountable." />
+  <meta name="description" content="Laisamis Climate and Land Initiative, a community movement for land justice and climate resilience in northern Kenya: registering 1.85 million hectares of ancestral community land, training land paralegals, and building community owned adaptation." />
   <title>Laisamis Climate & Land Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -318,112 +318,6 @@
       background: rgba(27,58,45,0.07);
       color: var(--earth);
       letter-spacing: 0.02em;
-    }
-
-    /* ── CARBON EXCHANGE (NEW) ──────────────────────── */
-    #carbon {
-      background: var(--ground);
-      padding: var(--gap) 0;
-      position: relative;
-      overflow: hidden;
-    }
-    #carbon::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 40px,
-        rgba(255,255,255,0.015) 40px,
-        rgba(255,255,255,0.015) 41px
-      );
-    }
-    .carbon-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .carbon-label { color: var(--amber-lt); margin-bottom: 1rem; display: block; }
-    .carbon-title {
-      font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.15;
-      color: var(--parch);
-      margin-bottom: 1.2rem;
-    }
-    .carbon-title em { font-style: italic; font-weight: 300; color: rgba(245,239,224,0.6); }
-    .carbon-body {
-      color: rgba(245,239,224,0.7);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.8rem;
-    }
-    .carbon-disclaimer {
-      font-size: 0.75rem;
-      color: rgba(245,239,224,0.35);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 1rem;
-      margin-top: 1.5rem;
-    }
-    .carbon-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .carbon-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 1.4rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .carbon-card:hover {
-      border-color: rgba(193,127,36,0.4);
-      background: rgba(255,255,255,0.07);
-    }
-    .carbon-card-badge {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 100px;
-      background: rgba(193,127,36,0.2);
-      color: var(--amber-lt);
-      display: inline-block;
-      margin-bottom: 0.8rem;
-    }
-    .carbon-card-badge.suspended {
-      background: rgba(200,80,60,0.15);
-      color: #e08060;
-    }
-    .carbon-card-badge.reinstated {
-      background: rgba(42,122,111,0.25);
-      color: #7fd4c8;
-    }
-    .carbon-card h4 {
-      font-family: var(--ff-display);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--parch);
-      margin-bottom: 0.4rem;
-      line-height: 1.3;
-    }
-    .carbon-card p {
-      font-size: 0.78rem;
-      color: rgba(245,239,224,0.5);
-      line-height: 1.5;
-    }
-    .carbon-price {
-      margin-top: 0.8rem;
-      font-size: 0.82rem;
-      color: var(--amber-lt);
-      font-weight: 500;
     }
 
     /* ── COMMUNITY SOLAR ────────────────────────────── */
@@ -1076,8 +970,6 @@
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
       .hero-stat:nth-child(4), .hero-stat:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
       .pillars-grid { grid-template-columns: 1fr; }
-      .carbon-inner { grid-template-columns: 1fr; }
-      .carbon-cards { grid-template-columns: 1fr 1fr; }
       .solar-models { grid-template-columns: 1fr; }
       .solar-phases { grid-template-columns: 1fr; }
       .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1094,7 +986,6 @@
       .nav-links { display: none; }
       .nav-hamburger { display: block; }
       .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .carbon-cards { grid-template-columns: 1fr; }
       .metrics-grid { grid-template-columns: 1fr; }
       .land-zones { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
@@ -1240,12 +1131,6 @@
     .pillar-icon { transition: transform 0.35s var(--ease-out), background 0.3s ease; }
     .pillar-card:hover .pillar-icon { transform: scale(1.1) rotate(-4deg); background: var(--earth); }
 
-    .carbon-card {
-      transition: border-color 0.25s ease, background 0.25s ease,
-                  transform 0.35s var(--ease-out), box-shadow 0.35s ease;
-    }
-    .carbon-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
-
     .solar-model {
       transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.35s ease;
     }
@@ -1318,7 +1203,6 @@
     <a href="#home" class="nav-logo">LCLI <span>·</span> Laisamis</a>
     <ul class="nav-links">
       <li><a href="#pillars">What We Do</a></li>
-      <li><a href="#carbon">Carbon Watch</a></li>
       <li><a href="#solar">Solar</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#land">The Land</a></li>
@@ -1338,7 +1222,7 @@
   <div class="hero-inner">
     <p class="hero-eyebrow">Laisamis Constituency · Marsabit County · Kenya</p>
     <h1 class="hero-h1">Our land, registered.<br><em>Our climate, defended.</em><br>Our future, ours.</h1>
-    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to 1.85 million hectares of ancestral land, build resilience across four ecological zones, and hold anyone who wants our land — carbon markets included — to the standard the constitution demands: consent.</p>
+    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to 1.85 million hectares of ancestral land, build resilience across four ecological zones, and hold anyone who wants our land to the standard the constitution demands: consent.</p>
     <div class="hero-actions">
       <a href="#support" class="btn btn-primary">Support the Movement</a>
       <a href="briefing.html" class="btn btn-ghost">Download Briefing</a>
@@ -1381,7 +1265,7 @@
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h3>Land Justice &amp; Registration</h3>
-        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our 1.85 million hectares under the Community Land Act — because registration is protection.</p>
+        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our 1.85 million hectares under the Community Land Act. Registration is protection.</p>
         <div class="pillar-tags">
           <span class="tag">Community Land Act</span>
           <span class="tag">Land paralegals</span>
@@ -1393,7 +1277,7 @@
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         </div>
         <h3>Climate Resilience</h3>
-        <p>Community solar, water harvesting, and rangeland restoration across four ecological zones — adaptation built and owned by the communities living on the climate frontline, not delivered to them.</p>
+        <p>Community solar, water harvesting, and rangeland restoration across four ecological zones. Adaptation built and owned by the communities living on the climate frontline, not delivered to them.</p>
         <div class="pillar-tags">
           <span class="tag">Community solar</span>
           <span class="tag">Water systems</span>
@@ -1405,53 +1289,11 @@
           <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3>Accountability &amp; Intelligence</h3>
-        <p>We watch the deals that want our land. Field-verified data, carbon market monitoring, and public intelligence that lets communities negotiate from knowledge — and lets bad deals be seen for what they are.</p>
+        <p>We watch the deals that want our land. Field verified data, land deal monitoring, and public intelligence that lets communities negotiate from knowledge and lets bad deals be seen for what they are.</p>
         <div class="pillar-tags">
-          <span class="tag">Carbon watchdog</span>
+          <span class="tag">Land watchdog</span>
           <span class="tag">Field monitoring</span>
           <span class="tag">Public reporting</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CARBON EXCHANGE -->
-<section id="carbon">
-  <div class="container">
-    <div class="carbon-inner">
-      <div class="reveal">
-        <span class="label carbon-label">Carbon Watchdog</span>
-        <h2 class="carbon-title">Our land is not a loophole.<br><em>We watch the carbon market.</em></h2>
-        <p class="carbon-body">Kenya's carbon market has already shown what happens without oversight: the region's flagship rangeland project was suspended over community consent, and regained market access in 2026 only after consent was rebuilt under the Community Land Act. Kenya's 2024 carbon regulations now make consent and benefit-sharing law — land-based projects must return at least 40% of earnings to communities.</p>
-        <p class="carbon-body">LCLI is not a carbon broker and takes no commission from any carbon deal. We monitor projects and proposals that touch community land in northern Kenya, teach communities their rights under the regulations, and publish what we find — so no community signs from need what it would refuse from knowledge.</p>
-        <a href="#contact" class="btn btn-primary">Report a Land or Carbon Concern</a>
-        <p class="carbon-disclaimer">Projects referenced for public-interest market intelligence. Registry data sourced from Verra public records. LCLI has no commercial interest in any project listed and accepts no payment from carbon developers or buyers.</p>
-      </div>
-      <div class="carbon-cards reveal">
-        <div class="carbon-card">
-          <span class="carbon-card-badge reinstated">↻ Reinstated Jun 2026</span>
-          <h4>Northern Kenya Rangelands Carbon Project</h4>
-          <p>1.9M ha · NRT · Verra #1468 · Suspended Jan 2025 over community consent; reinstated June 2026 only after community ratification under the Community Land Act.</p>
-          <p class="carbon-price">$8–12 / tonne · Consent restored market access</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Kasigau Corridor REDD+</h4>
-          <p>200,000 ha · Wildlife Works · VCS + CCB · 1.4M tCO₂/yr avoided · 13.9M tonnes to date.</p>
-          <p class="carbon-price">$14–18 / tonne · Market reference</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Acorn Agroforestry CRUs</h4>
-          <p>Rabobank · Embu &amp; Tharaka-Nithi · Ex-post satellite-verified · 80% revenue to farmers.</p>
-          <p class="carbon-price">€20–31 / tonne · Premium removal</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Kenya Agricultural Carbon Project</h4>
-          <p>22,000 ha · Vi Agroforestry / World Bank · VCS VM0017 · First African soil+tree carbon project.</p>
-          <p class="carbon-price">$9–13 / tonne · SALM methodology</p>
         </div>
       </div>
     </div>
@@ -1507,7 +1349,7 @@
         <span class="tag">AfDB Green Mini-Grids</span>
       </div>
     </div>
-    <p class="solar-note reveal">The solar programme is one component of the LCLI platform. It complements — and is governed by — our land registration, climate intelligence, and carbon integrity work. It does not replace them.</p>
+    <p class="solar-note reveal">The solar programme is one component of the LCLI platform. It complements our land registration and climate resilience work and answers to the same community structures. It does not replace them.</p>
   </div>
 </section>
 
@@ -1556,17 +1398,17 @@
       <div class="zone">
         <div class="zone-bar z2"></div>
         <h4>Zone II: Highland Forest</h4>
-        <p>Mt. Kulal &amp; Marsabit highlands, up to 1,000mm rainfall, altitude to 2,066m. UNESCO Biosphere Reserve. Highest biodiversity, forest carbon potential.</p>
+        <p>Mt. Kulal &amp; Marsabit highlands, up to 1,000mm rainfall, altitude to 2,066m. UNESCO Biosphere Reserve. Highest biodiversity and restoration value.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z4"></div>
         <h4>Zone IV: Semi-Arid Mid-Slopes</h4>
-        <p>Transitional zone. Soil carbon measurement, agri-climate data, solar irrigation potential. Gateway between highland and dryland systems.</p>
+        <p>Transitional zone. Soil health measurement, agri climate data, solar irrigation potential. Gateway between highland and dryland systems.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z5"></div>
         <h4>Zone V/VI: Arid Bushed Grassland</h4>
-        <p>300–900m. Primary deployment zone for solar, water harvesting, and remote sensing. Rangeland restoration carbon potential.</p>
+        <p>300–900m. Primary deployment zone for solar, water harvesting, and remote sensing. Rangeland restoration potential.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z6"></div>
@@ -1703,7 +1545,7 @@
     <div class="newsletter-band reveal">
       <div>
         <h3>Field intelligence, monthly.</h3>
-        <p>Land, carbon, and climate technology intelligence from northern Kenya — for partners, funders, and researchers. No spam, unsubscribe anytime.</p>
+        <p>Land and climate intelligence from northern Kenya for partners, funders, and researchers. No spam, unsubscribe anytime.</p>
       </div>
       <div>
         <p id="newsletter-success" class="newsletter-success">Subscribed. Field intelligence will arrive in your inbox.</p>
@@ -1736,7 +1578,7 @@
         <div class="about-body">
           <p>Hamed Nalle is a community development practitioner and social innovator born and raised in Laisamis Constituency. He is the son of the late <strong>Ntepesi Nalle</strong>, a respected community leader whose legacy of service directly informs the values on which this initiative is built.</p>
           <p>Through the <strong>Feiyah Action Network (FAN)</strong> and the <strong>Marsabit Youth Reform Program</strong>, Hamed has built deep grassroots networks across the constituency, working on youth empowerment, gender equality, and environmental conservation for over a decade.</p>
-          <p>LCLI sits alongside FAN as the climate and carbon dimension of a longer-running community development effort in northern Kenya. The two organizations share values, geography, and community trust built over years on the ground in Laisamis Ward and across the constituency.</p>
+          <p>LCLI sits alongside FAN as the climate and land dimension of a longer running community development effort in northern Kenya. The two organizations share values, geography, and community trust built over years on the ground in Laisamis Ward and across the constituency.</p>
         </div>
       </div>
     </div>
@@ -1749,7 +1591,7 @@
     <div class="support-header reveal">
       <span class="label">Support the Movement</span>
       <h2 class="section-title">Land justice needs<br><em>people behind it.</em></h2>
-      <p>Registering 1.85 million hectares, training land paralegals, and watching the carbon market takes sustained support. Here is how to stand with Laisamis.</p>
+      <p>Registering 1.85 million hectares, training land paralegals, and defending community land takes sustained support. Here is how to stand with Laisamis.</p>
     </div>
     <div class="support-grid reveal">
       <div class="support-card">
@@ -1764,7 +1606,7 @@
       </div>
       <div class="support-card">
         <h3>Stand with us</h3>
-        <p>Subscribe to the field intelligence, share our work, and if you see a land or carbon deal in northern Kenya that communities should know about — tell us. Attention is protection.</p>
+        <p>Subscribe to the field intelligence, share our work, and if you see a land deal in northern Kenya that communities should know about, tell us. Attention is protection.</p>
         <a href="#insights" class="btn btn-primary">Subscribe &amp; amplify</a>
       </div>
     </div>
@@ -1873,7 +1715,7 @@
 
   /* staggered grids: index each child so CSS can cascade them in */
   document.querySelectorAll(
-    '.pillars-grid, .carbon-cards, .solar-models, .solar-phases, .metrics-grid, .land-zones, .gov-steps, .insights-grid'
+    '.pillars-grid, .solar-models, .solar-phases, .metrics-grid, .land-zones, .gov-steps, .insights-grid'
   ).forEach(grid => {
     grid.classList.add('stagger');
     Array.from(grid.children).forEach((child, i) => child.style.setProperty('--i', i));
