@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laisamis Climate & Land Initiative, community-governed land, climate resilience, community solar power, and carbon brokerage across 1.85 million hectares in northern Kenya." />
+  <meta name="description" content="Laisamis Climate and Land Initiative, a community movement for land justice and climate resilience in northern Kenya: registering 1.85 million hectares of ancestral community land, training land paralegals, and building community owned adaptation." />
   <title>Laisamis Climate & Land Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,7 +97,7 @@
     .nav-logo span { color: var(--amber); }
     .nav-links {
       display: flex;
-      gap: 1.8rem;
+      gap: 1.4rem;
       list-style: none;
     }
     .nav-links a {
@@ -318,108 +318,6 @@
       background: rgba(27,58,45,0.07);
       color: var(--earth);
       letter-spacing: 0.02em;
-    }
-
-    /* ── CARBON EXCHANGE (NEW) ──────────────────────── */
-    #carbon {
-      background: var(--ground);
-      padding: var(--gap) 0;
-      position: relative;
-      overflow: hidden;
-    }
-    #carbon::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 40px,
-        rgba(255,255,255,0.015) 40px,
-        rgba(255,255,255,0.015) 41px
-      );
-    }
-    .carbon-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .carbon-label { color: var(--amber-lt); margin-bottom: 1rem; display: block; }
-    .carbon-title {
-      font-family: var(--ff-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.15;
-      color: var(--parch);
-      margin-bottom: 1.2rem;
-    }
-    .carbon-title em { font-style: italic; font-weight: 300; color: rgba(245,239,224,0.6); }
-    .carbon-body {
-      color: rgba(245,239,224,0.7);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.8rem;
-    }
-    .carbon-disclaimer {
-      font-size: 0.75rem;
-      color: rgba(245,239,224,0.35);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 1rem;
-      margin-top: 1.5rem;
-    }
-    .carbon-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .carbon-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 1.4rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .carbon-card:hover {
-      border-color: rgba(193,127,36,0.4);
-      background: rgba(255,255,255,0.07);
-    }
-    .carbon-card-badge {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 100px;
-      background: rgba(193,127,36,0.2);
-      color: var(--amber-lt);
-      display: inline-block;
-      margin-bottom: 0.8rem;
-    }
-    .carbon-card-badge.suspended {
-      background: rgba(200,80,60,0.15);
-      color: #e08060;
-    }
-    .carbon-card h4 {
-      font-family: var(--ff-display);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--parch);
-      margin-bottom: 0.4rem;
-      line-height: 1.3;
-    }
-    .carbon-card p {
-      font-size: 0.78rem;
-      color: rgba(245,239,224,0.5);
-      line-height: 1.5;
-    }
-    .carbon-price {
-      margin-top: 0.8rem;
-      font-size: 0.82rem;
-      color: var(--amber-lt);
-      font-weight: 500;
     }
 
     /* ── COMMUNITY SOLAR ────────────────────────────── */
@@ -807,6 +705,47 @@
       align-self: flex-start;
     }
 
+    /* ── NEWSLETTER ─────────────────────────────────── */
+    .newsletter-band {
+      margin-top: 3rem;
+      background: var(--ground);
+      border-radius: 8px;
+      padding: 2.2rem 2.4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .newsletter-band h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--parch);
+      margin-bottom: 0.4rem;
+    }
+    .newsletter-band p {
+      font-size: 0.85rem;
+      color: rgba(245,239,224,0.65);
+      line-height: 1.6;
+    }
+    .newsletter-form { display: flex; gap: 0.7rem; }
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(245,239,224,0.2);
+      color: var(--parch);
+    }
+    .newsletter-form input[type="email"]::placeholder { color: rgba(245,239,224,0.4); }
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(193,127,36,0.15);
+    }
+    .newsletter-success {
+      display: none;
+      font-size: 0.88rem;
+      color: var(--amber-lt);
+    }
+
     /* ── ABOUT ──────────────────────────────────────── */
     #about {
       background: var(--ground);
@@ -863,6 +802,59 @@
     }
     .about-body p + p { margin-top: 1rem; }
     .about-body strong { color: var(--parch); font-weight: 500; }
+
+    /* ── SUPPORT ────────────────────────────────────── */
+    #support {
+      background: var(--parch-lt);
+      padding: var(--gap) 0;
+    }
+    .support-header { text-align: center; margin-bottom: 3rem; }
+    .support-header .label { display: block; margin-bottom: 0.8rem; }
+    .support-header p {
+      color: var(--text-lt);
+      font-size: 0.95rem;
+      max-width: 620px;
+      margin: 0.8rem auto 0;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--mist);
+      border: 1.5px solid var(--mist);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .support-card {
+      background: var(--parch-lt);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.25s ease;
+    }
+    .support-card:hover { background: var(--parch); }
+    .support-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ground);
+      margin-bottom: 0.6rem;
+    }
+    .support-card p {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.65;
+      margin-bottom: 1.3rem;
+      flex: 1;
+    }
+    .support-card .btn { align-self: flex-start; }
+    .support-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-lt);
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 900px) { .support-grid { grid-template-columns: 1fr; } }
 
     /* ── CONTACT ────────────────────────────────────── */
     #contact {
@@ -978,8 +970,6 @@
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
       .hero-stat:nth-child(4), .hero-stat:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
       .pillars-grid { grid-template-columns: 1fr; }
-      .carbon-inner { grid-template-columns: 1fr; }
-      .carbon-cards { grid-template-columns: 1fr 1fr; }
       .solar-models { grid-template-columns: 1fr; }
       .solar-phases { grid-template-columns: 1fr; }
       .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -987,6 +977,7 @@
       .gov-grid { grid-template-columns: 1fr; }
       .gov-right { position: static; }
       .insights-grid { grid-template-columns: 1fr; }
+      .newsletter-band { grid-template-columns: 1fr; padding: 1.8rem 1.5rem; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { max-width: 320px; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -995,10 +986,10 @@
       .nav-links { display: none; }
       .nav-hamburger { display: block; }
       .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .carbon-cards { grid-template-columns: 1fr; }
       .metrics-grid { grid-template-columns: 1fr; }
       .land-zones { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
@@ -1140,12 +1131,6 @@
     .pillar-icon { transition: transform 0.35s var(--ease-out), background 0.3s ease; }
     .pillar-card:hover .pillar-icon { transform: scale(1.1) rotate(-4deg); background: var(--earth); }
 
-    .carbon-card {
-      transition: border-color 0.25s ease, background 0.25s ease,
-                  transform 0.35s var(--ease-out), box-shadow 0.35s ease;
-    }
-    .carbon-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
-
     .solar-model {
       transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.35s ease;
     }
@@ -1218,15 +1203,15 @@
     <a href="#home" class="nav-logo">LCLI <span>·</span> Laisamis</a>
     <ul class="nav-links">
       <li><a href="#pillars">What We Do</a></li>
-      <li><a href="#carbon">Carbon</a></li>
       <li><a href="#solar">Solar</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#land">The Land</a></li>
       <li><a href="#governance">Governance</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="services.html">Programs</a></li>
       <li><a href="briefing.html">Briefing</a></li>
-      <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+      <li><a href="#support" class="nav-cta">Support Us</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   </div>
@@ -1236,10 +1221,10 @@
 <section id="home">
   <div class="hero-inner">
     <p class="hero-eyebrow">Laisamis Constituency · Marsabit County · Kenya</p>
-    <h1 class="hero-h1">Community land.<br><em>Climate intelligence.</em><br>Carbon integrity.</h1>
-    <p class="hero-sub">LCLI builds community-governed systems for land, climate resilience, and carbon markets across 1.85 million hectares of northern Kenya. Consent is not a checkbox, it is the architecture.</p>
+    <h1 class="hero-h1">Our land, registered.<br><em>Our climate, defended.</em><br>Our future, ours.</h1>
+    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to 1.85 million hectares of ancestral land, build resilience across four ecological zones, and hold anyone who wants our land to the standard the constitution demands: consent.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Partner With Us</a>
+      <a href="#support" class="btn btn-primary">Support the Movement</a>
       <a href="briefing.html" class="btn btn-ghost">Download Briefing</a>
     </div>
     <div class="hero-stats">
@@ -1277,80 +1262,38 @@
     <div class="pillars-grid reveal">
       <div class="pillar-card">
         <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Land Justice &amp; Registration</h3>
+        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our 1.85 million hectares under the Community Land Act. Registration is protection.</p>
+        <div class="pillar-tags">
+          <span class="tag">Community Land Act</span>
+          <span class="tag">Land paralegals</span>
+          <span class="tag">NLC partnership</span>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         </div>
         <h3>Climate Resilience</h3>
-        <p>Solar, water harvesting, and rangeland restoration across four ecological zones, proving community-led climate solutions at scale in African dryland conditions.</p>
+        <p>Community solar, water harvesting, and rangeland restoration across four ecological zones. Adaptation built and owned by the communities living on the climate frontline, not delivered to them.</p>
         <div class="pillar-tags">
-          <span class="tag">Solar deployment</span>
+          <span class="tag">Community solar</span>
           <span class="tag">Water systems</span>
           <span class="tag">Rangeland restoration</span>
         </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Land &amp; Governance</h3>
-        <p>Building the legal and institutional foundation for community land ownership: NLC-anchored, constitutionally grounded, and designed to outlast political cycles.</p>
-        <div class="pillar-tags">
-          <span class="tag">Community Land Act</span>
-          <span class="tag">NLC partnership</span>
-          <span class="tag">Land registration</span>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">
           <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <h3>Data &amp; Intelligence</h3>
-        <p>Field-verified land data, ecological zone intelligence, and climate monitoring, positioning Laisamis as a knowledge hub and carbon-ready landscape, not a project site.</p>
+        <h3>Accountability &amp; Intelligence</h3>
+        <p>We watch the deals that want our land. Field verified data, land deal monitoring, and public intelligence that lets communities negotiate from knowledge and lets bad deals be seen for what they are.</p>
         <div class="pillar-tags">
-          <span class="tag">Remote sensing</span>
+          <span class="tag">Land watchdog</span>
           <span class="tag">Field monitoring</span>
-          <span class="tag">Ecological mapping</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CARBON EXCHANGE -->
-<section id="carbon">
-  <div class="container">
-    <div class="carbon-inner">
-      <div class="reveal">
-        <span class="label carbon-label">Carbon Brokerage</span>
-        <h2 class="carbon-title">Community-first carbon.<br><em>Integrity built in.</em></h2>
-        <p class="carbon-body">Kenya's carbon market is growing fast, and facing a credibility crisis. High-profile projects have been suspended for failing to obtain community consent. LCLI's community-governed architecture makes that failure structurally impossible.</p>
-        <p class="carbon-body">We connect community land projects in northern Kenya to verified international buyers, earning on matched deals, not upfront fees. No community signs anything until FPIC is fully documented. That is our market position.</p>
-        <a href="#contact" class="btn btn-primary">Discuss a Carbon Partnership</a>
-        <p class="carbon-disclaimer">Projects referenced for market intelligence purposes. Registry data sourced from Verra public records. LCLI earns commission on matched deals only. No upfront cost to community land projects.</p>
-      </div>
-      <div class="carbon-cards reveal">
-        <div class="carbon-card">
-          <span class="carbon-card-badge suspended">⚠ Suspended</span>
-          <h4>Northern Kenya Rangelands Carbon Project</h4>
-          <p>1.9M ha · NRT · Verra #1468 · Suspended Jan 2025 following court ruling on community consent.</p>
-          <p class="carbon-price">$8–12 / tonne · Not listed by LCLI</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Kasigau Corridor REDD+</h4>
-          <p>200,000 ha · Wildlife Works · VCS + CCB · 1.4M tCO₂/yr avoided · 13.9M tonnes to date.</p>
-          <p class="carbon-price">$14–18 / tonne · Market reference</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Acorn Agroforestry CRUs</h4>
-          <p>Rabobank · Embu &amp; Tharaka-Nithi · Ex-post satellite-verified · 80% revenue to farmers.</p>
-          <p class="carbon-price">€20–31 / tonne · Premium removal</p>
-        </div>
-        <div class="carbon-card">
-          <span class="carbon-card-badge">✓ Active</span>
-          <h4>Kenya Agricultural Carbon Project</h4>
-          <p>22,000 ha · Vi Agroforestry / World Bank · VCS VM0017 · First African soil+tree carbon project.</p>
-          <p class="carbon-price">$9–13 / tonne · SALM methodology</p>
+          <span class="tag">Public reporting</span>
         </div>
       </div>
     </div>
@@ -1363,18 +1306,18 @@
     <div class="reveal">
       <span class="solar-badge">New Initiative · In Development</span>
       <h2 class="section-title">Community solar.<br><em>Power that pays the people.</em></h2>
-      <p class="solar-intro">LCLI is developing a community-owned solar farm in Laisamis, built on the same NLC-anchored governance as everything we do. The Chalbi and Kaisut zones hold some of the highest solar irradiance in East Africa. The model is simple: affordable electricity sold directly to local homes and businesses first, with surplus power sold to the national grid, and revenue flowing back through the Community Land Trust.</p>
+      <p class="solar-intro">LCLI is developing a community owned solar farm in Laisamis, built on the same NLC anchored governance as everything we do. The Chalbi and Kaisut zones hold some of the highest solar irradiance in East Africa. The model is simple: affordable electricity sold directly to local homes and businesses first, with surplus power sold to the national grid, and revenue flowing back through the Community Land Trust.</p>
     </div>
     <div class="solar-models reveal">
       <div class="solar-model">
         <div class="solar-model-tag">Revenue Stream 01</div>
         <h3>Direct to the community</h3>
-        <p>A solar mini-grid supplying households, schools, clinics, boreholes, and small businesses at tariffs below standard retail rates. For many families in Laisamis this is first-time electricity: light after dark, cold-chain for medicine, power for enterprise. Community members are customers and owners, never just beneficiaries.</p>
+        <p>A solar mini grid supplying households, schools, clinics, boreholes, and small businesses at tariffs below standard retail rates. For many families in Laisamis this is first time electricity: light after dark, cold chain for medicine, power for enterprise. Community members are customers and owners, never just beneficiaries.</p>
       </div>
       <div class="solar-model">
         <div class="solar-model-tag">Revenue Stream 02</div>
         <h3>To the national grid</h3>
-        <p>Surplus generation sold to Kenya Power under a Power Purchase Agreement, with EPRA generation licensing. Kenya has reopened PPAs under a competitive auction framework, and grid sales convert Laisamis sunshine into long-term community income that funds land registration, monitoring, and local services.</p>
+        <p>Surplus generation sold to Kenya Power under a Power Purchase Agreement, with EPRA generation licensing. Kenya has reopened PPAs under a competitive auction framework, and grid sales convert Laisamis sunshine into long term community income that funds land registration, monitoring, and local services.</p>
       </div>
     </div>
     <div class="solar-phases reveal">
@@ -1385,13 +1328,13 @@
       </div>
       <div class="solar-phase">
         <div class="solar-phase-n">Phase 2</div>
-        <h4>Community mini-grid</h4>
-        <p>Build and operate the first mini-grid serving Laisamis homes and institutions, with youth trained as operators and technicians under our existing capacity programme.</p>
+        <h4>Community mini grid</h4>
+        <p>Build and operate the first mini grid serving Laisamis homes and institutions, with youth trained as operators and technicians under our existing capacity programme.</p>
       </div>
       <div class="solar-phase">
         <div class="solar-phase-n">Phase 3</div>
-        <h4>Grid-tied expansion</h4>
-        <p>Scale generation capacity and secure a PPA to sell surplus power to the national grid, anchoring long-term revenue for the Community Land Trust.</p>
+        <h4>Grid tied expansion</h4>
+        <p>Scale generation capacity and secure a PPA to sell surplus power to the national grid, anchoring long term revenue for the Community Land Trust.</p>
       </div>
     </div>
     <div class="solar-funders reveal">
@@ -1403,10 +1346,10 @@
         <span class="tag">EEP Africa</span>
         <span class="tag">AECF · REACT</span>
         <span class="tag">REPP / Camco</span>
-        <span class="tag">AfDB Green Mini-Grids</span>
+        <span class="tag">AfDB Green Mini Grids</span>
       </div>
     </div>
-    <p class="solar-note reveal">The solar programme is one component of the LCLI platform. It complements — and is governed by — our land registration, climate intelligence, and carbon integrity work. It does not replace them.</p>
+    <p class="solar-note reveal">The solar programme is one component of the LCLI platform. It complements our land registration and climate resilience work and answers to the same community structures. It does not replace them.</p>
   </div>
 </section>
 
@@ -1427,7 +1370,7 @@
       <div class="metric">
         <div class="metric-num">9</div>
         <div class="metric-label">NLC forums completed</div>
-        <div class="metric-sub">All 6 wards · 2024–2025</div>
+        <div class="metric-sub">All 6 wards · 2024 to 2025</div>
       </div>
       <div class="metric">
         <div class="metric-num">5</div>
@@ -1455,26 +1398,26 @@
       <div class="zone">
         <div class="zone-bar z2"></div>
         <h4>Zone II: Highland Forest</h4>
-        <p>Mt. Kulal &amp; Marsabit highlands, up to 1,000mm rainfall, altitude to 2,066m. UNESCO Biosphere Reserve. Highest biodiversity, forest carbon potential.</p>
+        <p>Mt. Kulal &amp; Marsabit highlands, up to 1,000mm rainfall, altitude to 2,066m. UNESCO Biosphere Reserve. Highest biodiversity and restoration value.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z4"></div>
-        <h4>Zone IV: Semi-Arid Mid-Slopes</h4>
-        <p>Transitional zone. Soil carbon measurement, agri-climate data, solar irrigation potential. Gateway between highland and dryland systems.</p>
+        <h4>Zone IV: Semi Arid Mid Slopes</h4>
+        <p>Transitional zone. Soil health measurement, agri climate data, solar irrigation potential. Gateway between highland and dryland systems.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z5"></div>
         <h4>Zone V/VI: Arid Bushed Grassland</h4>
-        <p>300–900m. Primary deployment zone for solar, water harvesting, and remote sensing. Rangeland restoration carbon potential.</p>
+        <p>300 to 900m. Primary deployment zone for solar, water harvesting, and remote sensing. Rangeland restoration potential.</p>
       </div>
       <div class="zone">
         <div class="zone-bar z6"></div>
         <h4>Chalbi / Kaisut Desert</h4>
-        <p>Extreme aridity, highest solar irradiance in East Africa. Unique conditions for atmospheric water and off-grid energy technology deployment.</p>
+        <p>Extreme aridity, highest solar irradiance in East Africa. Unique conditions for atmospheric water and off grid energy technology deployment.</p>
       </div>
     </div>
     <blockquote class="land-quote reveal">
-      <p>"ASAL regions cover 80% of Kenya and 40% of sub-Saharan Africa. Climate technology proven in Laisamis is technology proven for one of the world's largest underserved markets."</p>
+      <p>"ASAL regions cover 80% of Kenya and 40% of sub Saharan Africa. Climate technology proven in Laisamis is technology proven for one of the world's largest underserved markets."</p>
 <cite>Laisamis Climate &amp; Land Initiative · Partnership Briefing 2026</cite>
     </blockquote>
   </div>
@@ -1484,8 +1427,8 @@
 <section id="governance">
   <div class="container">
     <span class="label">Governance</span>
-    <h2 class="section-title" style="margin-top:0.8rem;margin-bottom:0.4rem;">Community-owned.<br><em>Constitutionally anchored.</em></h2>
-    <p style="color:var(--text-lt);font-size:0.9rem;max-width:560px;margin-bottom:0;">The governance failures that damaged high-profile African land projects follow one pattern: weak consent, no legal anchor, benefits captured by intermediaries. We built the structure to prevent exactly that.</p>
+    <h2 class="section-title" style="margin-top:0.8rem;margin-bottom:0.4rem;">Community owned.<br><em>Constitutionally anchored.</em></h2>
+    <p style="color:var(--text-lt);font-size:0.9rem;max-width:560px;margin-bottom:0;">The governance failures that damaged high profile African land projects follow one pattern: weak consent, no legal anchor, benefits captured by intermediaries. We built the structure to prevent exactly that.</p>
     <div class="gov-grid">
       <div>
         <div class="gov-steps reveal">
@@ -1500,7 +1443,7 @@
             <div class="gov-step-n">2</div>
             <div>
               <h4>Community Land Trust</h4>
-              <p>Being established with elected ward trustees from all five communities. Benefit-sharing agreements embedded from the start. Community-owned, not NGO-managed.</p>
+              <p>Being established with elected ward trustees from all five communities. Benefit sharing agreements embedded from the start. Community owned, not NGO managed.</p>
             </div>
           </div>
           <div class="gov-step">
@@ -1520,7 +1463,7 @@
         </div>
         <div class="gov-alert reveal">
           <div class="gov-alert-title">⚠ Legal Clarity</div>
-          <p>~173,700 hectares are subject to an active High Court case and are excluded from any partnership commitment until resolved. All agreements use only undisputed, NLC-registered land.</p>
+          <p>~173,700 hectares are subject to an active High Court case and are excluded from any partnership commitment until resolved. All agreements use only undisputed, NLC registered land.</p>
         </div>
       </div>
       <div class="gov-right reveal">
@@ -1577,7 +1520,7 @@
           <span class="insight-date">April 2026</span>
         </div>
         <h3>Why ASAL Land is Africa's Most Undervalued Climate Technology Asset</h3>
-        <p>The world's climate technology investors are searching for real-world deployment environments. Africa's dryland majority offers exactly that, and remains largely untapped.</p>
+        <p>The world's climate technology investors are searching for real world deployment environments. Africa's dryland majority offers exactly that, and remains largely untapped.</p>
         <span class="insight-arrow">Read article →</span>
       </a>
       <a href="insight-nlc.html" class="insight-card">
@@ -1599,6 +1542,23 @@
         <span class="insight-arrow">Read article →</span>
       </a>
     </div>
+    <div class="newsletter-band reveal">
+      <div>
+        <h3>Field intelligence, monthly.</h3>
+        <p>Land and climate intelligence from northern Kenya for partners, funders, and researchers. No spam, unsubscribe anytime.</p>
+      </div>
+      <div>
+        <p id="newsletter-success" class="newsletter-success">Subscribed. Field intelligence will arrive in your inbox.</p>
+        <form class="newsletter-form" action="https://formsubmit.co/hamednalle@laisamisclimate.co.ke" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New field-intelligence subscriber via laisamisclimate.co.ke" />
+          <input type="hidden" name="_next" value="https://laisamisclimate.co.ke/?subscribed=1#insights" />
+          <input type="hidden" name="form" value="newsletter" />
+          <input type="email" name="email" placeholder="Work email" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1618,10 +1578,39 @@
         <div class="about-body">
           <p>Hamed Nalle is a community development practitioner and social innovator born and raised in Laisamis Constituency. He is the son of the late <strong>Ntepesi Nalle</strong>, a respected community leader whose legacy of service directly informs the values on which this initiative is built.</p>
           <p>Through the <strong>Feiyah Action Network (FAN)</strong> and the <strong>Marsabit Youth Reform Program</strong>, Hamed has built deep grassroots networks across the constituency, working on youth empowerment, gender equality, and environmental conservation for over a decade.</p>
-          <p>LCLI sits alongside FAN as the climate and carbon dimension of a longer-running community development effort in northern Kenya. The two organizations share values, geography, and community trust built over years on the ground in Laisamis Ward and across the constituency.</p>
+          <p>LCLI sits alongside FAN as the climate and land dimension of a longer running community development effort in northern Kenya. The two organizations share values, geography, and community trust built over years on the ground in Laisamis Ward and across the constituency.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support">
+  <div class="container">
+    <div class="support-header reveal">
+      <span class="label">Support the Movement</span>
+      <h2 class="section-title">Land justice needs<br><em>people behind it.</em></h2>
+      <p>Registering 1.85 million hectares, training land paralegals, and defending community land takes sustained support. Here is how to stand with Laisamis.</p>
+    </div>
+    <div class="support-grid reveal">
+      <div class="support-card">
+        <h3>Fund the work</h3>
+        <p>Foundations, climate justice funds, and philanthropists: fund the paralegal program, the registration drive, or the watchdog work directly. We provide full program budgets and reporting, and every engagement is governed by community structures.</p>
+        <a href="#contact" class="btn btn-primary">Talk to us about funding</a>
+      </div>
+      <div class="support-card">
+        <h3>Give as an individual</h3>
+        <p>A public donation channel is launching soon. Until it is live, individual supporters can reach us directly, every contribution goes through the community governance structures, and we will show you what it did.</p>
+        <a href="mailto:hamednalle@laisamisclimate.co.ke?subject=I want to support LCLI" class="btn btn-primary">Email to give</a>
+      </div>
+      <div class="support-card">
+        <h3>Stand with us</h3>
+        <p>Subscribe to the field intelligence, share our work, and if you see a land deal in northern Kenya that communities should know about, tell us. Attention is protection.</p>
+        <a href="#insights" class="btn btn-primary">Subscribe &amp; amplify</a>
+      </div>
+    </div>
+    <p class="support-note reveal">LCLI works alongside the Feiyah Action Network. All support is applied under community governance, with disputed land excluded from every program.</p>
   </div>
 </section>
 
@@ -1632,7 +1621,7 @@
       <div class="reveal">
         <span class="label">Get Involved</span>
         <h2 class="section-title" style="margin-top:0.5rem;margin-bottom:0.8rem;">Start a conversation.<br><em>Build something real.</em></h2>
-        <p class="contact-desc">We are actively engaging climate technology partners, development finance institutions, carbon buyers, and research organisations. Tell us who you are. We respond within 48 hours.</p>
+        <p class="contact-desc">We are actively engaging land rights and climate justice funders, resilience partners, researchers, journalists, and allies of the Sajili Ardhi ya Jamii registration push. Tell us who you are. We respond within 48 hours.</p>
         <div class="contact-info">
           <div class="contact-row">
             <span class="contact-row-label">Email</span>
@@ -1678,14 +1667,16 @@
             <label for="type">I am a</label>
             <select id="type" name="type">
               <option value="">Select type of organisation</option>
+              <option>Foundation or philanthropic funder</option>
+              <option>Climate justice or land rights organisation</option>
+              <option>Individual supporter / donor</option>
               <option>Climate technology company</option>
-              <option>Carbon buyer or broker</option>
               <option>Energy or solar project funder</option>
-              <option>Accelerator or investor</option>
               <option>Development finance institution</option>
               <option>Research or academic institution</option>
               <option>Government or public body</option>
               <option>Media or journalist</option>
+              <option>Community member reporting a concern</option>
               <option>Other</option>
             </select>
           </div>
@@ -1707,6 +1698,8 @@
     <div class="footer-inner">
       <div class="footer-logo">LCLI <span>·</span> Laisamis Climate &amp; Land Initiative</div>
       <ul class="footer-links">
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="#support">Support Us</a></li>
         <li><a href="#insights">Insights</a></li>
         <li><a href="briefing.html">Briefing</a></li>
         <li><a href="policies.html">Policies</a></li>
@@ -1722,7 +1715,7 @@
 
   /* staggered grids: index each child so CSS can cascade them in */
   document.querySelectorAll(
-    '.pillars-grid, .carbon-cards, .solar-models, .solar-phases, .metrics-grid, .land-zones, .gov-steps, .insights-grid'
+    '.pillars-grid, .solar-models, .solar-phases, .metrics-grid, .land-zones, .gov-steps, .insights-grid'
   ).forEach(grid => {
     grid.classList.add('stagger');
     Array.from(grid.children).forEach((child, i) => child.style.setProperty('--i', i));
@@ -1786,6 +1779,13 @@
     if (contactForm) contactForm.style.display = 'none';
   }
 
+  /* newsletter: show success after FormSubmit redirects back with ?subscribed=1 */
+  if (new URLSearchParams(window.location.search).get('subscribed') === '1') {
+    document.getElementById('newsletter-success').style.display = 'block';
+    var newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) newsletterForm.style.display = 'none';
+  }
+
   /* counter animation, shared by hero stats and impact metrics */
   function countUp(el, duration) {
     const text = el.textContent;
@@ -1822,5 +1822,8 @@
   }, { threshold: 0.3 });
   metricsObserver.observe(metricsSection);
 </script>
+<!-- Cookieless, privacy-friendly analytics. Activate by claiming the code
+     "laisamisclimate" at goatcounter.com — until then this no-ops silently. -->
+<script data-goatcounter="https://laisamisclimate.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
