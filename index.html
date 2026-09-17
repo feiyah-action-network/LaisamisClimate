@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laisamis Climate & Land Initiative, community-governed land, climate resilience, community solar power, and carbon brokerage across 1.85 million hectares in northern Kenya." />
+  <meta name="description" content="Laisamis Climate & Land Initiative — a community movement for land justice and climate resilience in northern Kenya: registering 1.85 million hectares of ancestral community land, training land paralegals, and holding the carbon market accountable." />
   <title>Laisamis Climate & Land Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -909,6 +909,59 @@
     .about-body p + p { margin-top: 1rem; }
     .about-body strong { color: var(--parch); font-weight: 500; }
 
+    /* ── SUPPORT ────────────────────────────────────── */
+    #support {
+      background: var(--parch-lt);
+      padding: var(--gap) 0;
+    }
+    .support-header { text-align: center; margin-bottom: 3rem; }
+    .support-header .label { display: block; margin-bottom: 0.8rem; }
+    .support-header p {
+      color: var(--text-lt);
+      font-size: 0.95rem;
+      max-width: 620px;
+      margin: 0.8rem auto 0;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--mist);
+      border: 1.5px solid var(--mist);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .support-card {
+      background: var(--parch-lt);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.25s ease;
+    }
+    .support-card:hover { background: var(--parch); }
+    .support-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ground);
+      margin-bottom: 0.6rem;
+    }
+    .support-card p {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.65;
+      margin-bottom: 1.3rem;
+      flex: 1;
+    }
+    .support-card .btn { align-self: flex-start; }
+    .support-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-lt);
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 900px) { .support-grid { grid-template-columns: 1fr; } }
+
     /* ── CONTACT ────────────────────────────────────── */
     #contact {
       background: var(--parch);
@@ -1265,16 +1318,16 @@
     <a href="#home" class="nav-logo">LCLI <span>·</span> Laisamis</a>
     <ul class="nav-links">
       <li><a href="#pillars">What We Do</a></li>
-      <li><a href="#carbon">Carbon</a></li>
+      <li><a href="#carbon">Carbon Watch</a></li>
       <li><a href="#solar">Solar</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#land">The Land</a></li>
       <li><a href="#governance">Governance</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html">Programs</a></li>
       <li><a href="briefing.html">Briefing</a></li>
-      <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+      <li><a href="#support" class="nav-cta">Support Us</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   </div>
@@ -1284,10 +1337,10 @@
 <section id="home">
   <div class="hero-inner">
     <p class="hero-eyebrow">Laisamis Constituency · Marsabit County · Kenya</p>
-    <h1 class="hero-h1">Community land.<br><em>Climate intelligence.</em><br>Carbon integrity.</h1>
-    <p class="hero-sub">LCLI builds community-governed systems for land, climate resilience, and carbon markets across 1.85 million hectares of northern Kenya. Consent is not a checkbox, it is the architecture.</p>
+    <h1 class="hero-h1">Our land, registered.<br><em>Our climate, defended.</em><br>Our future, ours.</h1>
+    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to 1.85 million hectares of ancestral land, build resilience across four ecological zones, and hold anyone who wants our land — carbon markets included — to the standard the constitution demands: consent.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Partner With Us</a>
+      <a href="#support" class="btn btn-primary">Support the Movement</a>
       <a href="briefing.html" class="btn btn-ghost">Download Briefing</a>
     </div>
     <div class="hero-stats">
@@ -1325,38 +1378,38 @@
     <div class="pillars-grid reveal">
       <div class="pillar-card">
         <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Land Justice &amp; Registration</h3>
+        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our 1.85 million hectares under the Community Land Act — because registration is protection.</p>
+        <div class="pillar-tags">
+          <span class="tag">Community Land Act</span>
+          <span class="tag">Land paralegals</span>
+          <span class="tag">NLC partnership</span>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         </div>
         <h3>Climate Resilience</h3>
-        <p>Solar, water harvesting, and rangeland restoration across four ecological zones, proving community-led climate solutions at scale in African dryland conditions.</p>
+        <p>Community solar, water harvesting, and rangeland restoration across four ecological zones — adaptation built and owned by the communities living on the climate frontline, not delivered to them.</p>
         <div class="pillar-tags">
-          <span class="tag">Solar deployment</span>
+          <span class="tag">Community solar</span>
           <span class="tag">Water systems</span>
           <span class="tag">Rangeland restoration</span>
         </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Land &amp; Governance</h3>
-        <p>Building the legal and institutional foundation for community land ownership: NLC-anchored, constitutionally grounded, and designed to outlast political cycles.</p>
-        <div class="pillar-tags">
-          <span class="tag">Community Land Act</span>
-          <span class="tag">NLC partnership</span>
-          <span class="tag">Land registration</span>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">
           <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <h3>Data &amp; Intelligence</h3>
-        <p>Field-verified land data, ecological zone intelligence, and climate monitoring, positioning Laisamis as a knowledge hub and carbon-ready landscape, not a project site.</p>
+        <h3>Accountability &amp; Intelligence</h3>
+        <p>We watch the deals that want our land. Field-verified data, carbon market monitoring, and public intelligence that lets communities negotiate from knowledge — and lets bad deals be seen for what they are.</p>
         <div class="pillar-tags">
-          <span class="tag">Remote sensing</span>
+          <span class="tag">Carbon watchdog</span>
           <span class="tag">Field monitoring</span>
-          <span class="tag">Ecological mapping</span>
+          <span class="tag">Public reporting</span>
         </div>
       </div>
     </div>
@@ -1368,12 +1421,12 @@
   <div class="container">
     <div class="carbon-inner">
       <div class="reveal">
-        <span class="label carbon-label">Carbon Brokerage</span>
-        <h2 class="carbon-title">Community-first carbon.<br><em>Integrity built in.</em></h2>
-        <p class="carbon-body">Kenya's carbon market is growing fast, and it has already learned its defining lesson: the region's flagship rangeland project was suspended over community consent, and regained market access in 2026 only after consent was rebuilt under the Community Land Act. Kenya's 2024 carbon regulations now make consent and benefit-sharing law — land-based projects must return at least 40% of earnings to communities. LCLI's community-governed architecture builds that compliance in from day one.</p>
-        <p class="carbon-body">We connect community land projects in northern Kenya to verified international buyers, earning on matched deals, not upfront fees. No community signs anything until FPIC is fully documented. That is our market position.</p>
-        <a href="#contact" class="btn btn-primary">Discuss a Carbon Partnership</a>
-        <p class="carbon-disclaimer">Projects referenced for market intelligence purposes. Registry data sourced from Verra public records. LCLI earns commission on matched deals only. No upfront cost to community land projects.</p>
+        <span class="label carbon-label">Carbon Watchdog</span>
+        <h2 class="carbon-title">Our land is not a loophole.<br><em>We watch the carbon market.</em></h2>
+        <p class="carbon-body">Kenya's carbon market has already shown what happens without oversight: the region's flagship rangeland project was suspended over community consent, and regained market access in 2026 only after consent was rebuilt under the Community Land Act. Kenya's 2024 carbon regulations now make consent and benefit-sharing law — land-based projects must return at least 40% of earnings to communities.</p>
+        <p class="carbon-body">LCLI is not a carbon broker and takes no commission from any carbon deal. We monitor projects and proposals that touch community land in northern Kenya, teach communities their rights under the regulations, and publish what we find — so no community signs from need what it would refuse from knowledge.</p>
+        <a href="#contact" class="btn btn-primary">Report a Land or Carbon Concern</a>
+        <p class="carbon-disclaimer">Projects referenced for public-interest market intelligence. Registry data sourced from Verra public records. LCLI has no commercial interest in any project listed and accepts no payment from carbon developers or buyers.</p>
       </div>
       <div class="carbon-cards reveal">
         <div class="carbon-card">
@@ -1690,6 +1743,35 @@
   </div>
 </section>
 
+<!-- SUPPORT -->
+<section id="support">
+  <div class="container">
+    <div class="support-header reveal">
+      <span class="label">Support the Movement</span>
+      <h2 class="section-title">Land justice needs<br><em>people behind it.</em></h2>
+      <p>Registering 1.85 million hectares, training land paralegals, and watching the carbon market takes sustained support. Here is how to stand with Laisamis.</p>
+    </div>
+    <div class="support-grid reveal">
+      <div class="support-card">
+        <h3>Fund the work</h3>
+        <p>Foundations, climate justice funds, and philanthropists: fund the paralegal program, the registration drive, or the watchdog work directly. We provide full program budgets and reporting, and every engagement is governed by community structures.</p>
+        <a href="#contact" class="btn btn-primary">Talk to us about funding</a>
+      </div>
+      <div class="support-card">
+        <h3>Give as an individual</h3>
+        <p>A public donation channel is launching soon. Until it is live, individual supporters can reach us directly — every contribution goes through the community governance structures, and we will show you what it did.</p>
+        <a href="mailto:hamednalle@laisamisclimate.co.ke?subject=I want to support LCLI" class="btn btn-primary">Email to give</a>
+      </div>
+      <div class="support-card">
+        <h3>Stand with us</h3>
+        <p>Subscribe to the field intelligence, share our work, and if you see a land or carbon deal in northern Kenya that communities should know about — tell us. Attention is protection.</p>
+        <a href="#insights" class="btn btn-primary">Subscribe &amp; amplify</a>
+      </div>
+    </div>
+    <p class="support-note reveal">LCLI works alongside the Feiyah Action Network. All support is applied under community governance, with disputed land excluded from every program.</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -1697,7 +1779,7 @@
       <div class="reveal">
         <span class="label">Get Involved</span>
         <h2 class="section-title" style="margin-top:0.5rem;margin-bottom:0.8rem;">Start a conversation.<br><em>Build something real.</em></h2>
-        <p class="contact-desc">We are actively engaging climate technology partners, development finance institutions, carbon buyers, and research organisations. Tell us who you are. We respond within 48 hours.</p>
+        <p class="contact-desc">We are actively engaging land rights and climate justice funders, resilience partners, researchers, journalists, and allies of the Sajili Ardhi ya Jamii registration push. Tell us who you are. We respond within 48 hours.</p>
         <div class="contact-info">
           <div class="contact-row">
             <span class="contact-row-label">Email</span>
@@ -1743,14 +1825,16 @@
             <label for="type">I am a</label>
             <select id="type" name="type">
               <option value="">Select type of organisation</option>
+              <option>Foundation or philanthropic funder</option>
+              <option>Climate justice or land rights organisation</option>
+              <option>Individual supporter / donor</option>
               <option>Climate technology company</option>
-              <option>Carbon buyer or broker</option>
               <option>Energy or solar project funder</option>
-              <option>Accelerator or investor</option>
               <option>Development finance institution</option>
               <option>Research or academic institution</option>
               <option>Government or public body</option>
               <option>Media or journalist</option>
+              <option>Community member reporting a concern</option>
               <option>Other</option>
             </select>
           </div>
@@ -1772,7 +1856,8 @@
     <div class="footer-inner">
       <div class="footer-logo">LCLI <span>·</span> Laisamis Climate &amp; Land Initiative</div>
       <ul class="footer-links">
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="#support">Support Us</a></li>
         <li><a href="#insights">Insights</a></li>
         <li><a href="briefing.html">Briefing</a></li>
         <li><a href="policies.html">Policies</a></li>
