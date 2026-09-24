@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Laisamis Climate and Land Initiative, a community movement for land justice and climate resilience in northern Kenya: registering 1.85 million hectares of ancestral community land, training land paralegals, and building community owned adaptation." />
+  <meta name="description" content="Laisamis Climate and Land Initiative, a community movement for land justice and climate resilience in northern Kenya: registering our ancestral community land, training land paralegals, and building community owned adaptation." />
   <title>Laisamis Climate & Land Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -235,7 +235,7 @@
     /* hero stat bar */
     .hero-stats {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 2rem;
       gap: 0;
@@ -469,6 +469,12 @@
       padding: var(--gap) 0;
     }
     .land-header { margin-bottom: 2.5rem; }
+    #wildlife {
+      background: var(--parch-lt);
+      padding: var(--gap) 0;
+    }
+    #wildlife p { color: var(--text-lt); font-size: 0.95rem; margin-top: 0.8rem; max-width: 640px; }
+    #wildlife p.wildlife-closing { color: var(--ground); font-weight: 500; }
     .land-zones {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -967,7 +973,7 @@
     /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 900px) {
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
-      .hero-stat:nth-child(4), .hero-stat:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
+      .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
       .pillars-grid { grid-template-columns: 1fr; }
       .solar-models { grid-template-columns: 1fr; }
       .solar-phases { grid-template-columns: 1fr; }
@@ -1081,7 +1087,6 @@
     .hero-stat:nth-child(2) { animation-delay: 0.81s; }
     .hero-stat:nth-child(3) { animation-delay: 0.90s; }
     .hero-stat:nth-child(4) { animation-delay: 0.99s; }
-    .hero-stat:nth-child(5) { animation-delay: 1.08s; }
 
     /* slow ambient drift on the hero's amber bloom */
     #home::after {
@@ -1205,6 +1210,7 @@
       <li><a href="#solar">Solar</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#land">The Land</a></li>
+      <li><a href="#wildlife">Wildlife</a></li>
       <li><a href="#governance">Governance</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#about">About</a></li>
@@ -1221,16 +1227,12 @@
   <div class="hero-inner">
     <p class="hero-eyebrow">Laisamis Constituency · Marsabit County · Kenya</p>
     <h1 class="hero-h1">Our land, registered.<br><em>Our climate, defended.</em><br>Our future, ours.</h1>
-    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to 1.85 million hectares of ancestral land, build resilience across four ecological zones, and hold anyone who wants our land to the standard the constitution demands: consent.</p>
+    <p class="hero-sub">LCLI is a community movement for land justice and climate resilience in northern Kenya. We organize the five communities of Laisamis to secure legal title to our ancestral land, build resilience across four ecological zones, and hold anyone who wants our land to the standard the constitution demands: consent.</p>
     <div class="hero-actions">
       <a href="#support" class="btn btn-primary">Support the Movement</a>
       <a href="briefing.html" class="btn btn-ghost">Download Briefing</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">1.85<span>M</span></div>
-        <div class="hero-stat-label">Hectares of<br>community land</div>
-      </div>
       <div class="hero-stat">
         <div class="hero-stat-num">9</div>
         <div class="hero-stat-label">NLC forums<br>completed</div>
@@ -1264,7 +1266,7 @@
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h3>Land Justice &amp; Registration</h3>
-        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our 1.85 million hectares under the Community Land Act. Registration is protection.</p>
+        <p>Only 64 of Kenya's ~1,000 community land units hold title. We train Laisamis youth as community land paralegals and drive registration of our ancestral land under the Community Land Act. Registration is protection.</p>
         <div class="pillar-tags">
           <span class="tag">Community Land Act</span>
           <span class="tag">Land paralegals</span>
@@ -1350,9 +1352,9 @@
     </div>
     <div class="metrics-grid reveal">
       <div class="metric">
-        <div class="metric-num">1.85<sup>M</sup></div>
-        <div class="metric-label">Hectares of community land</div>
-        <div class="metric-sub">4 ecological zones · 6 wards</div>
+        <div class="metric-num">4</div>
+        <div class="metric-label">Ecological zones</div>
+        <div class="metric-sub">Highland forest to the Chalbi Desert</div>
       </div>
       <div class="metric">
         <div class="metric-num">9</div>
@@ -1378,7 +1380,7 @@
   <div class="container">
     <div class="land-header reveal">
       <span class="label">The Land</span>
-      <h2 class="section-title">20,290 km² across<br><em>four ecological zones</em></h2>
+      <h2 class="section-title">One constituency,<br><em>four ecological zones</em></h2>
       <p style="color:var(--text-lt);font-size:0.95rem;margin-top:0.8rem;max-width:540px;">From highland forest at 2,066m to the Chalbi Desert: one constituency, four distinct climate environments, one structured partnership access point.</p>
     </div>
     <div class="land-zones reveal">
@@ -1407,6 +1409,20 @@
       <p>"ASAL regions cover 80% of Kenya and 40% of sub Saharan Africa. Climate technology proven in Laisamis is technology proven for one of the world's largest underserved markets."</p>
 <cite>Laisamis Climate &amp; Land Initiative · Partnership Briefing 2026</cite>
     </blockquote>
+  </div>
+</section>
+
+<!-- WILDLIFE -->
+<section id="wildlife">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Our Wildlife</span>
+      <h2 class="section-title">Our wildlife.<br><em>Our watch.</em></h2>
+      <p>Laisamis is home to animals the world is losing. Grevy's zebra, the reticulated giraffe, and vultures now listed as critically endangered all depend on this land, most of them outside any national park.</p>
+      <p>Their decline traces back to how land is managed and who decides: drought, competition for water and pasture, poisoned carcasses, and sandalwood and red cedar felled for export.</p>
+      <p>Registration comes first. With legal title under the Community Land Act, no conservation deal or biodiversity programme moves forward without informed community consent.</p>
+      <p class="wildlife-closing">Protect the land. Protect what lives on it. Decide together.</p>
+    </div>
   </div>
 </section>
 
@@ -1454,7 +1470,7 @@
         </div>
         <div class="gov-alert reveal">
           <div class="gov-alert-title">⚠ Legal Clarity</div>
-          <p>~173,700 hectares are subject to an active High Court case and are excluded from any partnership commitment until resolved. All agreements use only undisputed, NLC registered land.</p>
+          <p>Parcels subject to an active High Court case are excluded from any partnership commitment until resolved. All agreements use only undisputed, NLC registered land.</p>
         </div>
       </div>
       <div class="gov-right reveal">
@@ -1558,7 +1574,7 @@
     <div class="support-header reveal">
       <span class="label">Support the Movement</span>
       <h2 class="section-title">Land justice needs<br><em>people behind it.</em></h2>
-      <p>Registering 1.85 million hectares, training land paralegals, and defending community land takes sustained support. Here is how to stand with Laisamis.</p>
+      <p>Registering our ancestral land, training land paralegals, and defending community land takes sustained support. Here is how to stand with Laisamis.</p>
     </div>
     <div class="support-grid reveal">
       <div class="support-card">
