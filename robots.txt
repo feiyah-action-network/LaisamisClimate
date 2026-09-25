@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /funding/
 
 Sitemap: https://laisamisclimate.co.ke/sitemap.xml
