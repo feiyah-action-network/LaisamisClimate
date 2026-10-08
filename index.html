@@ -475,6 +475,43 @@
     }
     #wildlife p { color: var(--text-lt); font-size: 0.95rem; margin-top: 0.8rem; max-width: 640px; }
     #wildlife p.wildlife-closing { color: var(--ground); font-weight: 500; }
+
+    /* ── CARBON POSITION ───────────────────────────── */
+    #carbon-position {
+      background: var(--parch);
+      padding: var(--gap) 0;
+    }
+    .carbon-steps { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.2rem; max-width: 720px; }
+    .carbon-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .carbon-step-n {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--ground); color: var(--amber);
+      font-family: var(--ff-display); font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .carbon-step p { font-size: 0.9rem; color: var(--text-lt); line-height: 1.65; }
+    .carbon-note {
+      background: rgba(193,127,36,0.08);
+      border: 1px solid rgba(193,127,36,0.25);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-top: 2rem;
+      max-width: 720px;
+    }
+    .carbon-note p { font-size: 0.88rem; color: var(--text-lt); line-height: 1.65; margin: 0; }
+    .carbon-sources {
+      font-size: 0.72rem;
+      color: var(--text-lt);
+      margin-top: 1.3rem;
+      line-height: 1.9;
+      max-width: 720px;
+    }
+    .carbon-sources a { color: var(--ground); }
     .land-zones {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1212,6 +1249,7 @@
       <li><a href="#land">The Land</a></li>
       <li><a href="#wildlife">Wildlife</a></li>
       <li><a href="#governance">Governance</a></li>
+      <li><a href="#carbon-position">Carbon</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="services.html">Programs</a></li>
@@ -1242,7 +1280,7 @@
         <div class="hero-stat-label">Communities<br>represented</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-num">5</div>
         <div class="hero-stat-label">Wards<br>engaged</div>
       </div>
       <div class="hero-stat">
@@ -1359,7 +1397,7 @@
       <div class="metric">
         <div class="metric-num">9</div>
         <div class="metric-label">NLC forums completed</div>
-        <div class="metric-sub">All 6 wards · 2024 to 2025</div>
+        <div class="metric-sub">All 5 wards · 2024 to 2025</div>
       </div>
       <div class="metric">
         <div class="metric-num">5</div>
@@ -1443,7 +1481,7 @@
             <div class="gov-step-n">1</div>
             <div>
               <h4>National Land Commission (NLC)</h4>
-              <p>Constitutional body under Article 67. Nine formal forums completed across all 6 wards with documented resolutions. Cannot be overridden by any individual, NGO, or investor.</p>
+              <p>Constitutional body under Article 67. Nine formal forums completed across all 5 wards with documented resolutions. Cannot be overridden by any individual, NGO, or outside party.</p>
             </div>
           </div>
           <div class="gov-step">
@@ -1487,6 +1525,41 @@
   </div>
 </section>
 
+<!-- CARBON POSITION -->
+<section id="carbon-position">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Our Position</span>
+      <h2 class="section-title">Our position<br><em>on carbon.</em></h2>
+      <p style="color:var(--text-lt);font-size:0.95rem;margin-top:0.8rem;max-width:640px;">Carbon finance has reached Laisamis before land rights did. Our position is firm and does not change by partner or by offer.</p>
+    </div>
+    <div class="carbon-steps reveal">
+      <div class="carbon-step">
+        <div class="carbon-step-n">1</div>
+        <div><p>LCLI takes no carbon finance, brokers no carbon deals, and holds no carbon partnerships. We are not a marketplace, and we do not sell access to community land.</p></div>
+      </div>
+      <div class="carbon-step">
+        <div class="carbon-step-n">2</div>
+        <div><p>No carbon contract moves forward on community land until that land is registered under the Community Land Act and the community has given free, prior and informed consent through its own ward assemblies, not the signature of one leader.</p></div>
+      </div>
+      <div class="carbon-step">
+        <div class="carbon-step-n">3</div>
+        <div><p>Communities already inside existing carbon projects can request independent paralegal support to understand their contracts, check whether consent was ever real, and exit if they choose.</p></div>
+      </div>
+    </div>
+    <div class="carbon-note reveal">
+      <p>In January 2025, the Isiolo Environment and Land Court found that two of the largest conservancies in the Northern Kenya Rangelands Carbon Project had been established unconstitutionally. Verra, the project's certifier, has since suspended it twice. In June 2026, Survival International reported that Rendille and Maasai members of the Melako and Leparua conservancies described being pressured to sign new carbon agreements. This position exists because of findings like these, not in spite of them.</p>
+    </div>
+    <div class="carbon-sources reveal">
+      Sources:
+      <a href="https://iboninternational.org/?p=14189" target="_blank" rel="noopener">IBON Africa, "Away from Carbon Finance: Towards Transformative Climate Finance in Kenya"</a> ·
+      <a href="https://news.mongabay.com/short-article/2025/01/kenyan-court-orders-two-community-wildlife-conservancies-shut-down/" target="_blank" rel="noopener">Mongabay, January 2025 court ruling</a> ·
+      <a href="https://news.mongabay.com/short-article/2025/05/kenyan-soil-carbon-project-suspended-for-a-second-time/" target="_blank" rel="noopener">Mongabay, Verra's second suspension</a> ·
+      <a href="https://survivalinternational.org/news/14519" target="_blank" rel="noopener">Survival International, June 2026</a>
+    </div>
+  </div>
+</section>
+
 <!-- INSIGHTS -->
 <section id="insights">
   <div class="container">
@@ -1502,8 +1575,8 @@
           <span class="insight-tag">Land &amp; Climate</span>
           <span class="insight-date">April 2026</span>
         </div>
-        <h3>Why ASAL Land is Africa's Most Undervalued Climate Technology Asset</h3>
-        <p>The world's climate technology investors are searching for real world deployment environments. Africa's dryland majority offers exactly that, and remains largely untapped.</p>
+        <h3>Our Land Is Not Undervalued. It Is Unregistered.</h3>
+        <p>ASAL land is often called empty or idle by outsiders. It is home to millions of pastoralist people, and the real gap is legal status, not value.</p>
         <span class="insight-arrow">Read article →</span>
       </a>
       <a href="insight-nlc.html" class="insight-card">
