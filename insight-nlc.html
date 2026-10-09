@@ -36,7 +36,14 @@
     .back-link{color:var(--ochre);text-decoration:none;font-size:0.78rem;
       letter-spacing:0.08em;text-transform:uppercase;font-weight:500;}
     .back-link:hover{color:var(--sand);}
-    .article-wrap{max-width:740px;margin:0 auto;padding:6rem 2.5rem 5rem;}
+    .article-wrap{max-width:740px;margin:0 auto;padding:3rem 2.5rem 5rem;}
+    .insight-hero{position:relative;padding:9rem 2.5rem 3rem;overflow:hidden;}
+    .insight-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .insight-hero-scrim{position:absolute;inset:0;background:linear-gradient(rgba(26,18,8,0.75),rgba(26,18,8,0.85));}
+    .insight-hero-inner{position:relative;max-width:740px;margin:0 auto;}
+    .insight-hero-inner .art-tag{color:var(--sand);}
+    .insight-hero-inner h1{color:var(--white);}
+    .insight-hero-inner .art-date{color:rgba(250,250,248,0.75);}
     .art-tag{font-size:0.64rem;letter-spacing:0.22em;text-transform:uppercase;
       color:var(--ochre);font-weight:600;display:block;margin-bottom:0.8rem;}
     .art-date{font-size:0.72rem;color:#9a8570;display:block;margin-bottom:2rem;}
@@ -85,9 +92,9 @@
     nav{animation:navDrop 0.7s cubic-bezier(0.16,1,0.3,1) both;}
     @keyframes navDrop{from{transform:translateY(-100%);}to{transform:translateY(0);}}
     @keyframes riseIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-    .art-tag,.article-wrap h1,.art-date,.lede{opacity:0;animation:riseIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+    .art-tag,.insight-hero-inner h1,.art-date,.lede{opacity:0;animation:riseIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
     .art-tag{animation-delay:0.12s;}
-    .article-wrap h1{animation-delay:0.25s;}
+    .insight-hero-inner h1{animation-delay:0.25s;}
     .art-date{animation-delay:0.38s;}
     .lede{animation-delay:0.5s;}
     .back-link{transition:color 0.2s ease,transform 0.25s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
@@ -102,7 +109,7 @@
     @media (prefers-reduced-motion: reduce){
       *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;animation-delay:0ms !important;transition-delay:0ms !important;}
       html{scroll-behavior:auto;}
-      .art-tag,.article-wrap h1,.art-date,.lede{opacity:1;}
+      .art-tag,.insight-hero-inner h1,.art-date,.lede{opacity:1;}
       html.anim .rv{opacity:1 !important;transform:none !important;}
     }
   </style>
@@ -115,10 +122,16 @@
   </a>
   <a class="back-link" href="index.html#insights">← All Insights</a>
 </nav>
+<div class="insight-hero">
+  <img class="insight-hero-photo" src="images/landscape/acacia-thorns-sky-800.webp" srcset="images/landscape/acacia-thorns-sky-800.webp 800w, images/landscape/acacia-thorns-sky.webp 1920w" sizes="100vw" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="insight-hero-scrim"></div>
+  <div class="insight-hero-inner">
+    <span class="art-tag">Governance</span>
+    <h1>Community Land Governance in Northern Kenya: What the NLC Process Actually Means</h1>
+    <span class="art-date">April 2026 · Laisamis Climate & Land Initiative</span>
+  </div>
+</div>
 <div class="article-wrap">
-  <span class="art-tag">Governance</span>
-  <h1>Community Land Governance in Northern Kenya: What the NLC Process Actually Means</h1>
-  <span class="art-date">April 2026 · Laisamis Climate & Land Initiative</span>
   <p class="lede">The National Land Commission is Kenya's constitutional anchor for community land rights. For communities, and for any outside party dealing with Laisamis land, understanding what the NLC process actually involves, and what it protects against, is not optional background. It is the legal floor that any agreement has to clear before it is legitimate.</p>
 
   <h2>Why land governance has failed African communities before</h2>
