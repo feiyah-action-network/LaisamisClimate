@@ -27,7 +27,12 @@
     padding: 2rem 1.5rem;
     background-image:
       repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(255,255,255,0.03) 38px, rgba(255,255,255,0.03) 39px),
-      repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(255,255,255,0.02) 38px, rgba(255,255,255,0.02) 39px);
+      repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(255,255,255,0.02) 38px, rgba(255,255,255,0.02) 39px),
+      linear-gradient(rgba(27,58,45,0.85),rgba(15,26,16,0.9)),
+      url('images/landscape/mountain-silhouette-dusk.webp');
+    background-size: auto, auto, cover, cover;
+    background-position: center, center, center, center;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
   }
   .notice { max-width: 560px; text-align: center; animation: riseIn 0.8s cubic-bezier(0.16,1,0.3,1) both; }
   @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
